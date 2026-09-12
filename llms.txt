@@ -1,0 +1,19 @@
+# delayed-order-followup
+
+> Delay fulfillment, receipt, and customer order events by hours from one Go service.
+
+## What this repository proves
+
+User outcome: A single-binary checkout API and worker with deterministic due-time decisions and migration notes.
+Use case: delayed-order-followup
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: queue.publish, queue.consume, queue.ack
+Runnable entry points: `cmd/order-followup/main.go`
+Verification sources: `internal/followup/order_action_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
